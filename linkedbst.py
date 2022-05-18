@@ -3,7 +3,6 @@ File: linkedbst.py
 Author: Ken Lambert
 """
 
-from numpy import sort
 from binary_search_tree.abstractcollection import AbstractCollection
 from binary_search_tree.bstnode import BSTNode
 from binary_search_tree.linkedstack import LinkedStack
