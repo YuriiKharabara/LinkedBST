@@ -418,8 +418,8 @@ class LinkedBST(AbstractCollection):
         for i in tqdm(range(len(words_to_find_in_sorted))):
             self.find_in_sorted(sorted_tree, words_to_find_in_sorted[i])
         print(
-            f'10000 random words found in sorted tree with {len(data_lst[0:20000])} words\
- in {time.time()-time_start} seconds.\n')
+            f'10000 random words found in tree created from sorted dictionary with\
+ {len(data_lst[0:20000])} words in {time.time()-time_start} seconds.\n')
 
         unsorted_tree = LinkedBST()
         unsorted = random.choices(data_lst, k=len(data_lst))
@@ -429,8 +429,8 @@ class LinkedBST(AbstractCollection):
         for i in tqdm(range(len(words_to_find))):
             self.find_in_unsorted(unsorted_tree, words_to_find[i])
         print(
-            f'10000 random words found in unsorted tree with {len(data_lst)} words in\
- {time.time()-time_start} seconds.\n')
+            f'10000 random words found in tree created from unsorted dictionary\
+ with {len(data_lst)} words in {time.time()-time_start} seconds.\n')
 
         unsorted_tree.rebalance()
         balanced_tree = unsorted_tree
