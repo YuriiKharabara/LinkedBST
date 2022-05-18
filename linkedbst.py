@@ -349,7 +349,7 @@ class LinkedBST(AbstractCollection):
             element (str): element to find
 
         Returns:
-            int: index of finded element
+            int: index of found element
         """
         return lst.index(element)
 
@@ -361,7 +361,7 @@ class LinkedBST(AbstractCollection):
             element (str): element to find
 
         Returns:
-            int: index of finded element
+            int: index of found element
         """
         return sorted_tree.find(elemenent)
 
@@ -373,7 +373,7 @@ class LinkedBST(AbstractCollection):
             element (str): element to find
 
         Returns:
-            int: index of finded element
+            int: index of found element
         """
         return unsorted_tree.find(element)
 
@@ -385,7 +385,7 @@ class LinkedBST(AbstractCollection):
             element (str): element to find
 
         Returns:
-            int: index of finded element
+            int: index of found element
         """
         return balanced_tree.find(element)
 
@@ -397,7 +397,7 @@ class LinkedBST(AbstractCollection):
         :return:
         :rtype:
         """
-        sys.setrecursionlimit(1000000)
+        sys.setrecursionlimit(10**6)
         # Initialization
         data_lst = self.read_file(path)
         words_to_find = random.choices(data_lst, k=10000)
@@ -406,7 +406,7 @@ class LinkedBST(AbstractCollection):
         for i in tqdm(range(len(words_to_find))):
             self.find_in_list(data_lst, words_to_find[i])
         print(
-            f'10000 random words finded in list with {len(data_lst)} words in\
+            f'10000 random words found in list with {len(data_lst)} words in\
  {time.time()-time_start} seconds.\n')
 
         sorted_tree = LinkedBST()
@@ -418,7 +418,7 @@ class LinkedBST(AbstractCollection):
         for i in tqdm(range(len(words_to_find_in_sorted))):
             self.find_in_sorted(sorted_tree, words_to_find_in_sorted[i])
         print(
-            f'10000 random words finded in sorted tree with {len(data_lst[0:20000])} words\
+            f'10000 random words found in sorted tree with {len(data_lst[0:20000])} words\
  in {time.time()-time_start} seconds.\n')
 
         unsorted_tree = LinkedBST()
@@ -429,7 +429,7 @@ class LinkedBST(AbstractCollection):
         for i in tqdm(range(len(words_to_find))):
             self.find_in_unsorted(unsorted_tree, words_to_find[i])
         print(
-            f'10000 random words finded in unsorted tree with {len(data_lst)} words in\
+            f'10000 random words found in unsorted tree with {len(data_lst)} words in\
  {time.time()-time_start} seconds.\n')
 
         unsorted_tree.rebalance()
@@ -438,7 +438,7 @@ class LinkedBST(AbstractCollection):
         for i in tqdm(range(len(words_to_find))):
             self.find_in_balanced(balanced_tree, words_to_find[i])
         print(
-            f'10000 random words finded in balanced tree with {len(data_lst)} words\
+            f'10000 random words found in balanced tree with {len(data_lst)} words\
  in {time.time()-time_start} seconds.\n')
 
 
